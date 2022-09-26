@@ -47,11 +47,12 @@
 
         <!-- javascript to caluate and display teh screen size-->
         <script>
-            var w = window.innerWidth;
-            var h = window.innerHeight;
+            var width = window.innerWidth;
+            var height = window.innerHeight;
             
-            var x = document.getElementById("demo");
-            x.innerHTML = "Browser width: " + w + ", height: " + h + ".";
+            var text = document.getElementById("demo");
+            //inserting the values into the <p>
+            text.innerHTML = "Browser width: " + w + ", height: " + h + ".";
         </script>
     </body>
 
