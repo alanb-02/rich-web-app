@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            
+            /*each column*/
+            .column{
+                border: 1px solid black;
+                padding: 30px;
+                text-align: center;
+            }
+            /*divtha contains the colums*/
+            .columns{
+                max-width: 100%;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <!--the grid-->
+        <div class="columns">
+            <!--each of the columns-->
+            <div class="column">
+                <p>1</p>
+            </div>
+            <div class="column">
+                <p>2</p>
+            </div>
+            <div class="column">
+                <p>3</p>
+            </div>
+            <div class="column">
+                <p>4</p>
+            </div>
+        </div>
+        
+
+        <!--displays the window size-->
+        <p id="demo"></p>
+
+        <!-- javascript to caluate and display teh screen size-->
+        <script>
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            
+            var x = document.getElementById("demo");
+            x.innerHTML = "Browser width: " + w + ", height: " + h + ".";
+        </script>
+    </body>
+
+
+</html>
