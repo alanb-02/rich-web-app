@@ -1,3 +1,5 @@
+//Problem 3:
+
 //array of images
 let virusImages = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7AlyM5jgALjSSGZsiQpq3pC0u6QoCm0TivQ&usqp=CAU",
@@ -14,7 +16,8 @@ for(let i = 0; i < imgs.length; i++) {
     const randomImg = Math.floor(Math.random() * virusImages.length)
     imgs[i].src = virusImages[randomImg]
 }
-//do the same for h1 elements
+
+//for h1 and h2 elements the text and colour is changed 
 const headers = document.getElementsByTagName("h1");
 const headers2 = document.getElementsByTagName("h2");
 for (let i = 0; i < headers.length; i++){
@@ -23,25 +26,25 @@ for (let i = 0; i < headers.length; i++){
     headers2[i].innerText = "WARNING YOUR COMPUTER HAS CORONAVIRUS!!!!";
     headers2[i].style.color = "orange";
 }
-//do the same for p elements
+
+//for p elements the text and colour is changed
 const p = document.getElementsByTagName("p");
 for (let i = 0; i < p.length; i++){
     p[i].innerText = "All text please self isolate!";
     p[i].style.color = "red";
 }
 
+//both p and list elements have increased padding (SOCIAL DISTANCING)
 const l = document.getElementsByTagName("li")
-const p2 = document.getElementsByTagName("p");
 for (let i = 0; i < p.length; i++){
-    p2[i].style.padding = "50px 50px 50px 50px";
+    p[i].style.padding = "50px 50px 50px 50px";
     l[i].style.padding = "50px 50px 50px 50px";
 }
 
-
+//once a p element is clicked an audio plays - COVID SIREN
 var audioO = new Audio('https://upload.wikimedia.org/wikipedia/commons/9/97/Siren.ogg');
-const link = document.getElementsByTagName("h3");
 for (let i = 0; i < p.length; i++){
     p[i].innerText = "All text please self isolate!";
     p[i].style.color = "red";
-    p[i].addEventListener("click", audioO.play() )
+    p[i].addEventListener("click", audioO.play() );
 }
