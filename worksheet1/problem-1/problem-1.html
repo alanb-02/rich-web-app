@@ -4,7 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <style>
-            
             /*each column*/
             .column{
                 border: 1px solid black;
@@ -16,10 +15,29 @@
                 max-width: 100%;
                 margin: 0 auto;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             }
 
+            /* CSS media rule for the grid to resize to 1x4 cells when window size isless than 360px*/
+            @media only screen and (min-width: 360px) {
+                .columns {
+                    grid-template-columns: 47.5% 47.5%;
+                    
+                }
+                .columns > div {
+                    padding: 20px;
+                }
+            }   
 
+            /* CSS media rule for the grid to resize to 2x2 cells when window size isless than 720px*/
+            @media only screen and (min-width: 720px) {
+                .columns {
+                    grid-template-columns: 25% 25% 25% 25%;
+
+                }
+                .columns > div {
+                    padding: 30px;
+                }
+            }
         </style>
     </head>
 
@@ -40,20 +58,6 @@
                 <p>4</p>
             </div>
         </div>
-        
-
-        <!--displays the window size-->
-        <p id="demo"></p>
-
-        <!-- javascript to caluate and display teh screen size-->
-        <script>
-            var width = window.innerWidth;
-            var height = window.innerHeight;
-            
-            var text = document.getElementById("demo");
-            //inserting the values into the <p>
-            text.innerHTML = "Browser width: " + w + ", height: " + h + ".";
-        </script>
     </body>
 
 
