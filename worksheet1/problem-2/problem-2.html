@@ -1,176 +1,23 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Note Taker</title>
-        <style>
-            body {
-                margin: 0px;
-            }
-            #header {
-                background: #325232;
-                color: white;
-                font: arial;
-                font-size: 16px;
-                padding: 16px;
-            }
-            #header > #name {
-                font-family: Arial, Sans-serif;
-                font-size:xx-large;
-                display: inline-block;
-            }
-            .clear {
-                clear: both;
-            }
-            #container {
-                margin: 20px 20px 20px 20px;
-            }
-            #area {
-                width: 100%;
-                height: 100%;
-                font: 1em arial;
-                color: rgba(50, 82, 50, 1.0);
-            }
-            #area:focus {
-                color: rgba(50, 82, 50, 1.0);
-                border: 2px solid #96c56f;
-                box-shadow: 0px 1px 1px #888888;
-            }
-            .buttons {
-                
-            }
-            .addbutton {
-                background-color: #325232;
-                margin: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 40px;
-                padding-right: 40px;
-                min-width: 100px;
-                text-align: center;
-                display: inline-block;
-            }
-            .addbutton:hover {
-                background-color: #96c56f;
-            }
-            .addbutton > p{
-                color: white;
-            }
-            .deletebutton {
-                background-color: red;
-                margin: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                padding-left: 40px;
-                padding-right: 40px;
-                min-width: 100px;
-                text-align: center;
-                display: inline-block;
-            }
-            .deletebutton:hover {
-                background-color:rgb(231, 108, 108);
-            }
-            .deletebutton > p{
-                color: white;
-            }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="problem-2.css" />
+    <title>Notes Taking App</title>
+  </head>
+  
+  
+  <body>
+    <!-- button to add a note -->
+    <button class="add" id="add">
+       Add note
+    </button>
 
-            .footer {
-                width: 100%;
-                background-color: #325232;
-                height: 32px;
-                position: fixed;
-                bottom: 0px;
-            }
-            .footer > p {
-                margin: 8px;
-                color: white;
-                font: 14px arial;
-                text-align: center;
-            }
-        </style>
-    </head>
-
-
-    <body>
-        <div id="header">
-            <div id="name">Web Note</div>
-        </div>
-        <div id="container">
-            <textarea id="area" rows="10" cols="50"></textarea>
-        </div>
-        <div class="buttons">
-            <div class="addbutton" id="addb">
-                <p>Add</p>
-            </div>
-            <div class="deletebutton" id="DelNoteItem">
-                <p>Remove</p>
-            </div>
-
-            <hr>
-            <h3 style="color:#325232; padding:20px">Your notes</h3>
-            <hr>
-            <div id="All_item_notes" class="row container-fluid"> </div>
-
-        <div class="footer">
-            <p>Problem 2</p>
-        </div>
-        
-
-
-        <script>
-            function DisplayTodoList(){
-                let All_item_notes = localStorage.getItem("All_item_notes");
-                if (!All_item_notes)
-                    notes = [];
-                else 
-                    notes = JSON.parse(All_item_notes);
-                let html = "";
-                for(let index=0; index<notes.length; index++) {
-                    html +=`
-                    <div style="height: 3rem; align-item:right; width: 18rem;"<
-                    <div style="display: flex; grid-gap: 18px;">
-                    <p class="card-text">${notes[index]}</p>
-                    <i id="${index}" style="cursor:pointer; color: red; fontsize: 20px" onclick=
-                    "DelNoteItem(this.id)" class="fa fa-trash"></i>
-                    </div>
-                    </div>
-                    `;
-                }
-                let localStorage_Notes = document.getElementById("All_item_notes");
-                if (notes.length == 0)
-                    localStorage_Notes.innerHTML = `🙄 No notes for now..`;
-                else
-                    localStorage_Notes.innerHTML = html;
-            }
-
-
-            document.getElementById("addb").addEventListener("click", ()=>{
-                let todoText = document.getElementById("area");
-                if(!todoText){
-                    alert("Please write something to create todo.")
-                    return;
-                }
-                let All_item_notes = localStorage.getItem("All_item_notes");
-                if (!All_item_notes) NoteListObj = [];
-                else
-                NoteListObj = JSON.parse(All_item_notes);
-                NoteListObj.push(todoText.value);
-                localStorage.setItem("All_item_notes", JSON.stringify(NoteListObj));
-                todoText.value = "";
-                DisplayTodoList();
-            });
-
-
-            document.getElementById("delb").addEventListener("click", ()=>{
-                const DelNoteItem=(ind)=>{
-                    let All_item_notes = localStorage.getItem("All_item_notes");
-                    if (All_item_notes != null)
-                    notes = JSON.parse(All_item_notes);
-                    notes.splice(ind, 1);
-                    let str_notes=JSON.stringify(notes);
-                    localStorage.setItem("All_item_notes",str_notes);
-                    DisplayTodoList();
-                }
-            });            
-        </script>
-    </body>
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+    <!-- javascript file -->
+    <script src="problem-2.js"></script>
+  </body>
 </html>
