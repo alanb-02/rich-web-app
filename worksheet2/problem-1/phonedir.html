@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Phone directory
+        </title>
+        <link rel="stylesheet" href="phonedir.css">
+    </head>
+
+    <body>
+        <h2>Phone Directory</h2>
+
+        <div class="form-div">
+            <form id=form action="">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" maxlength="20" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" required>
+                <br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" name="phone" onKeyPress="if(this.value.length==10) return false;" required>
+                <br><br>
+
+                <label for="name">Email:</label>
+                <input type="email" id="email" name="email" maxlength="40" required>
+                <br><br>
+
+                <div id="error">
+                    <p id="p1"></p>
+                </div>
+
+                <input id="submit" class="submit" type="submit" value="Submit" onclick="submitDetail()">
+                
+            </form>
+        </div>    
+
+        <div class="table-div">
+            <input type="number" id="searchInput" onkeyup="searchTable()" placeholder="Search numbers" title="Type in a phone number">
+
+            <table id="phonedir">
+                <tr>
+                    <th onclick="sortTable(0)">Name</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                </tr>
+            </table>
+        </div>
+          
+
+        <script src="phonedir.js"></script>
+
+    
+    </body>
+</html>
