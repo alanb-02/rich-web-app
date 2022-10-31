@@ -1,9 +1,11 @@
+/* all elements in the page */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
+/* username search bar input field */
 div.search-div input[type="text"] {
     padding: 10px;
     font-size: 17px;
@@ -13,6 +15,7 @@ div.search-div input[type="text"] {
     background: #f1f1f1;
 }
 
+/* search button submit username */
 div.search-div button {
     float: left;
     width: 20%;
@@ -25,6 +28,7 @@ div.search-div button {
     cursor: pointer;
 }
 
+/* profile image */
 img{
     display: block;
     margin-left: auto;
@@ -34,14 +38,16 @@ img{
     height: auto;
 }
 
+/* profile div */
 #output {
     float:left; 
-    background:rgb(199, 198, 198);
+    background:#dae3b3;
     width:30%;
     height:100vh;
     text-align: center;
 }
 
+/* repo list div */
 #output2 {
     float:left;
     background:rgb(255, 255, 255);
@@ -51,7 +57,7 @@ img{
     overflow: scroll;
 }
 
-
+/* each seperate repo div */
 div.reps {
     border: 2px solid rgb(0, 0, 0);
     border-radius: 12px;
@@ -62,10 +68,12 @@ div.reps {
     background-color: #d3e38a;
 }
 
+/* profile details headings */
 h3 {
     margin-top: 30px;
 }
 
+/* profile and repo heading */
 h2 {
     margin: 20px ;
 }

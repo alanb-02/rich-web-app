@@ -1,41 +1,55 @@
+<!-- Problem 3 - Querying GitHub usernmes using GitHub User API -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="problem-3.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Profile Fetch Api</title>
 </head>
 <body>
+    <!-- dive container contains searchbar, prfile div, and repo div -->
     <div class="container">
+        <!-- searchbar div -->
         <div class="search-div">
-            <input type="text" name="" id="username" placeholder="Enter Github Username" autocomplete="off">
+            <!-- searchbar to enter username -->
+            <input type="text" name="" id="username" placeholder="Please Enter Github Username" autocomplete="off">
+            <!-- buttonto get username from input field using getDetails() function -->
             <button onclick="getDetails();">Get Details</button>
         </div>
 
+        <!-- profile details div -->
         <div id="output">
             <h2>Profile: </h2> <br>
+            <!-- each div below will hold the information returned from the API -->
             <div class="profile" id="profile">
+                <!-- profile image -->
             </div>
             <div class="det">
+                <!-- user's name -->
                 <p id="name"></p>
             </div>
             <div class="det">
+                <!-- username -->
                 <p id="usernam"></p>
             </div>
             <div class="det">
+                <!-- user's email -->
                 <p id="email"></p>
             </div>
             <div class="det">
+                <!-- user's location -->
                 <p id="location"></p>
             </div>
             <div class="det">
+                <!-- number of gists that the user has -->
                 <p id="gists"></p>
             </div>
         </div>
 
-        
+        <!-- dive the displays the repo divs -->
         <div id="output2">
             <h2>Repos: </h2> <br>
             <div id="rps">
@@ -46,37 +60,5 @@
 </body>
 
 
-<script>
-    function getDetails(){
-        document.getElementById('output').style.display="block";
-        const name=document.getElementById('username').value;
-        fetch(`https://api.github.com/users/${name}`)
-        .then(response=>response.json().then(data=>{
-            console.log(data)
-            document.getElementById('name').innerHTML= '<h3>Name: </h3>' + data.name;
-            document.getElementById('usernam').innerHTML= '<h3>Username: </h3>' + data.login;
-            document.getElementById('email').innerHTML= '<h3>Email: </h3>' + data.email;
-            document.getElementById('location').innerHTML= '<h3>Location: </h3>' + data.location;
-            document.getElementById('gists').innerHTML= '<h3>Number of Gists: </h3>' + data.public_gists;
-            document.getElementById('profile').innerHTML= `<img src="${data.avatar_url}" />`
-        }))
-        getRepo()
-    }
-
-    function getRepo(){
-        var wrapper = document.getElementById('rps');
-        var newrep = "";
-        document.getElementById('output2').style.display="block";
-        const name=document.getElementById('username').value;
-        fetch(`https://api.github.com/users/${name}/repos`)
-        .then(response=>response.json().then(data=>{
-            console.log(data)
-            for (let i = 0; i < data.length; i++){
-                newrep += '<div class="reps"><h4 id="rep"> Name => ' + data[i].name + '</h4><br>' + data[i].description + '</div>'
-            }
-            wrapper.innerHTML = newrep
-
-        }))
-    }
-</script>
+<script src="problem-3.js"></script>
 </html>

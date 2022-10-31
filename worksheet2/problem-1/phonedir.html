@@ -1,3 +1,4 @@
+<!-- Problem 1 - Phone Directory -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,34 +12,43 @@
     <body>
         <h2>Phone Directory</h2>
 
+        <!-- div containing form to input number and details -->
         <div class="form-div">
             <form id=form action="">
                 <label for="name">Name:</label>
+                <!-- inputting the name of phone number owner (making sure inputs are only letters) -->
                 <input type="text" id="name" name="name" maxlength="20" onkeydown="return /[a-z, ]/i.test(event.key)" onblur="if (this.value == '') {this.value = '';}" onfocus="if (this.value == '') {this.value = '';}" required>
                 <br><br>
 
-                <label for="phone">Phone Number:</label>
+                <label for="phone">Phone Number:(</label>
+                <!-- inputting the phone number (has to be a length of 10 numbers) -->
                 <input type="number" id="phone" name="phone" onKeyPress="if(this.value.length==10) return false;" required>
                 <br><br>
 
                 <label for="name">Email:</label>
+                <!-- inputting email address -->
                 <input type="email" id="email" name="email" maxlength="40" required>
                 <br><br>
 
+                <!-- error div that displays message if the user leave any of the form empty -->
                 <div id="error">
                     <p id="p1"></p>
                 </div>
 
+                <!-- button to submit the form data into the table using function submitDetail() -->
                 <input id="submit" class="submit" type="submit" value="Submit" onclick="submitDetail()">
-                
             </form>
         </div>    
 
+        <!-- div containing search bar and table  -->
         <div class="table-div">
+            <!-- input to search numbers in table -->
             <input type="number" id="searchInput" onkeyup="searchTable()" placeholder="Search numbers" title="Type in a phone number">
 
+            <!-- table containing all the dat from the form -->
             <table id="phonedir">
                 <tr>
+                    <!-- clicking on name header sorts the name coloumn from ascending / descending order using function sortTable() -->
                     <th onclick="sortTable(0)">Name</th>
                     <th>Phone Number</th>
                     <th>Email</th>
@@ -46,9 +56,8 @@
             </table>
         </div>
           
-
+        <!-- javascript file with all functions -->
         <script src="phonedir.js"></script>
-
     
     </body>
 </html>

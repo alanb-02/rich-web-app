@@ -1,3 +1,4 @@
+/* page title */
 h2 {
     text-align: center;
     padding-bottom: 30px;
@@ -5,6 +6,7 @@ h2 {
     background-color: #bbd6eb;
 }
 
+/* form inputs */
 input[type=text], input[type=number], input[type=email], select {
     width: 100%;
     padding: 12px 20px;
@@ -14,7 +16,8 @@ input[type=text], input[type=number], input[type=email], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+
+/* form submit button */
 input[type=submit] {
     width: 25%;
     background-color: #0062ff;
@@ -26,22 +29,26 @@ input[type=submit] {
     cursor: pointer;
 }
   
+/* hovering over form submit button with mouse */
 input[type=submit]:hover {
     background-color: #4569a0;
 }
 
+/* div containing form */
 .form-dive {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
 }
 
+/* div containing form */
 div.form-div {
     border-radius: 5px;
     background-color: #89c1ec;
     padding: 20px;
 }
 
+/* div containing search bar & table */
 div.table-div {
     border-radius: 5px;
     background-color: white;
@@ -49,28 +56,33 @@ div.table-div {
     width: 100%;
 }
 
+/* searchbar  */
 #searchInput {
     background-color: #b8b6b6;
     color: white;
 }
 
+/* searchbar input placeholder */
 input[id^="searchInput"]::placeholder { 
     color: rgb(255, 255, 255);
 }
 
-
+/* table of data */
 #phondir {
     border-collapse: collapse;
 }
-  
+
+/* table data cells and header cells */
 #phonedir td, #phonedir th {
     padding: 8px;
 }
-  
+
+/* every third row in table */
 #phonedir tr:nth-child(odd){
     background-color: #f2f2f2 ;
 }
-  
+
+/* table header */
 #phonedir th {
     padding-top: 12px;
     padding-bottom: 12px;
