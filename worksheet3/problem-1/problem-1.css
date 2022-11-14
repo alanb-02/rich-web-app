@@ -11,6 +11,14 @@ flex-wrap: wrap;
 margin: 0;
 padding-top: 3rem;
 }
+#colours{
+background-color: #595959;
+border: none;
+border-radius: 3px;
+height: 50px;
+width: 50px;    
+margin: 20px;
+}
 .add {
 position: fixed;
 top: 1rem;
