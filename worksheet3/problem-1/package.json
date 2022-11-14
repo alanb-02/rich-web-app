@@ -1,0 +1,24 @@
+{
+  "name": "problem-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "problem-1.js",
+  "scripts": {
+    "publish":"webpack && webpack-dev-server --output-public=/dev/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^7.5.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "esm": "^3.2.25",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}

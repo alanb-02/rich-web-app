@@ -5,7 +5,7 @@
 
 /* 1.	List all of the post titles having more than six words */
 /* API */
-fetch(`http://jsonplaceholder.typicode.com/posts`)
+fetch(`https://jsonplaceholder.typicode.com/posts`)
 .then(response=>response.json().then(data=>{
 
     /* each array elemnt */
@@ -30,7 +30,7 @@ fetch(`http://jsonplaceholder.typicode.com/posts`)
 
 /* 2.  Show a word frequency map for all of the body contents of the posts */
 /* API */
-fetch(`http://jsonplaceholder.typicode.com/posts`)
+fetch(`https://jsonplaceholder.typicode.com/posts`)
 .then(response=>response.json().then(data=>{
 
     /* result of merging multiple objects with sum of values */
