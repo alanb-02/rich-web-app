@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.timeInputDiv {
+    width: 900px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.top-inputDiv {
+    width: 450px;
+    height: 150px;
+    border-radius: 10px;
+    background: #82bcff;
+    margin: auto;
+}
+
+.input-time {
+    border-radius: 10px;
+    border: 2px solid black;
+}
+

@@ -39,11 +39,8 @@ const timeInput = {
             displayM.innerHTML = mins;
             dispalyS.innerHTML = secs
 
+            console.log(hrs, mins, secs);  
 
-
-            /* var date = new Date(0, 0); */
-            /* date.setSeconds(+time * 60 * 60);
-            console.log(date); */
             if(time == 0) {
                 startCount.unsubscribe();
                 
