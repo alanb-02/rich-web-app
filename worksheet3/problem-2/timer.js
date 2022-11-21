@@ -29,7 +29,11 @@ const timeInput = {
             secs = seconds % 3600;
             secs = secs % 60;
 
-            console.log(hrs, mins, secs); 
+            if ( hrs < 10 || mins < 10  || secs < 10) {
+                hrs = String(hrs).padStart(2, '0');
+                mins = String(mins).padStart(2, '0');
+                secs = String(secs).padStart(2, '0');
+            }
 
             displayH.innerHTML = hrs;
             displayM.innerHTML = mins;
