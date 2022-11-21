@@ -4,10 +4,18 @@
     padding: 0;
 }
 
+h3 {
+    color: white;
+}
+
 .timeInputDiv {
     width: 900px;
     margin: 50px auto;
     text-align: center;
+    background-color: #737373;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .top-inputDiv {
@@ -20,6 +28,63 @@
 
 .input-time {
     border-radius: 10px;
-    border: 2px solid black;
 }
 
+.semicolon {
+    display: inline-block;
+    font-size: 50px;
+    color: white;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    margin: 15px auto;
+    color: #787878;
+    background-color: #fff;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 2px black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #95f166;
+    color: white;
+}
+
+input {
+    width: 80px;
+    height: 60px;
+    font-size: 30px;
+    text-align: right;
+    margin: 10px auto;
+}
+
+#startBtn1 {
+    background: #fff;
+    margin-top: 5%;
+    height: 25%;
+}
+
+#block {
+    display: inline-block;
+}
+
+.outputdiv {
+    padding-bottom: 30px;
+    background-color: red;
+}
+
+span.output-time {
+    background-color: rgb(184, 178, 178);
+    border-radius: 10px;
+
+}
+
+.output-time {
+    margin-top: 25px;
+    font-size: 45px;
+}

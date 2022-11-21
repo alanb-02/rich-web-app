@@ -8,17 +8,24 @@
     <title>Countdown Timer</title>
 </head>
 <body>
+    <h3></H3>
     <div class="timeInputDiv">
+        <h3>Counter Timer</h3>
         <div class="inputDiv">
-            <input type="number" id="inputHour" class="input-time" name="hour" placeholder="HH">
-            <input type="number" id="inputMinute" class="input-time" name="minute" placeholder="MM" max="59">
-            <input type="number" id="inputSecond" class="input-time" name="second" placeholder="ss" max="59">
-
+            <input type="number" id="inputHour" class="input-time" placeholder="HH" value="00" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <span id="semicolon"><b>:</b></span>
+            <input type="number" id="inputMinute" class="input-time" placeholder="MM" value="00" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            <span id="semicolon"><b>:</b></span>
+            <input type="number" id="inputSecond" class="input-time" placeholder="SS" value="00" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        </div>
+        <div>
             <button id="startBtn">Start Countdown</button>
         </div>
         <div class="outputDiv">
             <span id="hour" class="output-time"></span>
+            <span id="semicolon"><b>:</b></span>
             <span id="minute" class="output-time"></span>
+            <span id="semicolon"><b>:</b></span>
             <span id="second" class="output-time"></span>
         </div>
     </div>
