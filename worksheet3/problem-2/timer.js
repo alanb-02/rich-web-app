@@ -10,6 +10,12 @@ const timeInput = {
         const m = document.getElementById('inputMinute').value;
         const s = document.getElementById('inputSecond').value;
 
+        var hTos = h * 3600;
+        var mTos = m * 60;
+        var duration = hTos + mTos + parseInt(s);
+        /* console.log(hTos, mTos, sTos, duration); */
+
+        
     }
 }
 
