@@ -29,7 +29,7 @@ const addNewNote = {
     toolbar.appendChild(delBtn)
 
     const edSaveBtn = document.createElement('button');
-    edSaveBtn.innerHTML = "Edit /Save";
+    edSaveBtn.innerHTML = "Save";
     edSaveBtn.setAttribute("id", "note-" + noteNum);
     edSaveBtn.setAttribute("class", "edit");
     edSaveBtn.setAttribute("style", "background-color:green");
@@ -38,6 +38,7 @@ const addNewNote = {
     note.appendChild(toolbar);
 
     const textArea = document.createElement('textarea');
+    textArea.readOnly = false;
     note.appendChild(textArea);
 
     var noteColourBtn = document.getElementById('colours');
@@ -54,6 +55,22 @@ const addNewNote = {
     var delObservable = Rx.Observable.fromEvent(delBtn, 'click');
     delObservable.subscribe(deleteNote);
 
+    const edSaveNote = {
+      next: function() {
+        if (textArea.readOnly == false){
+          textArea.readOnly = true;
+          edSaveBtn.innerHTML = "Edit";
+        }else {
+          textArea.readOnly = false;
+          edSaveBtn.innerHTML = "Save";
+        }
+        alert(textArea.value)
+        /* textArea.readOnly = true; */
+        note.appendChild(textArea);
+      }
+    }
+    var edObservable = Rx.Observable.fromEvent(edSaveBtn, 'click');
+    edObservable.subscribe(edSaveNote);
     
 
     return note.id;
