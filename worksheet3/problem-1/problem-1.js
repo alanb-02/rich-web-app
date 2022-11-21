@@ -48,11 +48,13 @@ const addNewNote = {
 
     const deleteNote = {
       next: function(){
-        document.getElementById("id")
+        document.getElementById(delBtn.getAttribute("id")).remove();
       }
     }
     var delObservable = Rx.Observable.fromEvent(delBtn, 'click');
     delObservable.subscribe(deleteNote);
+
+    
 
     return note.id;
   }
