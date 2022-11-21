@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--     <link rel="stylesheet" type="text/css" href="timer.css">
+ -->    <title>Countdown Timer</title>
+</head>
+<body>
+    <div class="timeInputDiv">
+        <div class="inputDiv">
+            <input type="number" id="inputHour" class="input-time" name="hour" placeholder="HH">
+            <input type="number" id="inputMinute" class="input-time" name="minute" placeholder="MM" max="59">
+            <input type="number" id="inputSecond" class="input-time" name="second" placeholder="ss" max="59">
+
+            <button id="startBtn">Start Countdown</button>
+        </div>
+        <div class="outputDiv">
+            <span id="hour" class="output-time"></span>
+            <span id="minute" class="output-time"></span>
+            <span id="second" class="output-time"></span>
+        </div>
+    </div>
+
+    <script src="https://npmcdn.com/@reactivex/rxjs@5.0.0-beta.7/dist/global/Rx.umd.js"></script>
+    <script src="timer.js"></script>
+</body>
+</html>
