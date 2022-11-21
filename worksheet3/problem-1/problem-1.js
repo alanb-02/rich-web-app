@@ -1,5 +1,11 @@
 let noteNum = 0;
 var add = document.getElementById("add");
+/* const notes = JSON.parse(localStorage.getItem('notes')) 
+
+
+if(notes) {  
+  notes.forEach(note => addNewNote(note))  
+} */
 
 
 const addNewNote = {
@@ -14,31 +20,39 @@ const addNewNote = {
 
     const toolbar = document.createElement('div');
     toolbar.setAttribute("class", "tools");
-    toolbar.innerHTML =  `
-      <button class="edit" style="background-color:green">Edit/Save</button>  
-      <button class="delete" style="background-color:red">Delete</button>`;
+ 
+    const delBtn = document.createElement('button');
+    delBtn.innerHTML = "Delete";
+    delBtn.setAttribute("id", "note-" + noteNum);
+    delBtn.setAttribute("class", "delete");
+    delBtn.setAttribute("style", "background-color:red");
+    toolbar.appendChild(delBtn)
+
+    const edSaveBtn = document.createElement('button');
+    edSaveBtn.innerHTML = "Edit /Save";
+    edSaveBtn.setAttribute("id", "note-" + noteNum);
+    edSaveBtn.setAttribute("class", "edit");
+    edSaveBtn.setAttribute("style", "background-color:green");
+    toolbar.appendChild(edSaveBtn)
+
     note.appendChild(toolbar);
 
-    const notesText = document.createElement('textarea');
-    note.appendChild(notesText);
+    const textArea = document.createElement('textarea');
+    note.appendChild(textArea);
 
     var noteColourBtn = document.getElementById('colours');
-    const edSaveBtn = document.getElementsByClassName('edit');
-    const delBtn = document.getElementsByClassName('delete'); 
 
     document.body.appendChild(note);
 
-    notesText.style.backgroundColor = noteColourBtn.value;
+    textArea.style.backgroundColor = noteColourBtn.value;
 
-
-/*     const changeColor = {
-      next: function() {
-        console.log("hola");
+    const deleteNote = {
+      next: function(){
+        document.getElementById("id")
       }
     }
-    var observableCol = Rx.Observable.fromEvent(noteColourBtn, 'click');
-    observableCol.subscribe(changeColor); */
-
+    var delObservable = Rx.Observable.fromEvent(delBtn, 'click');
+    delObservable.subscribe(deleteNote);
 
     return note.id;
   }
@@ -46,3 +60,11 @@ const addNewNote = {
 
 var addObservable = Rx.Observable.fromEvent(add, 'click');
 addObservable.subscribe(addNewNote);
+
+
+/* function updateLS() {  
+  const notesText = document.querySelectorAll('textarea')  
+  const notes = []  
+  notesText.forEach(note => notes.push(note.value))  
+  localStorage.setItem('notes', JSON.stringify(notes))  
+}   */
