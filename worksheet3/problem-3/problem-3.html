@@ -1,4 +1,7 @@
+<!-- This problem is to take the note taking app from previous worksheet and use RxJs istead of plain javascript-->
+<!-- also there is the option to add sub notes to the main notes -->
 <!DOCTYPE html>
+<!-- RxJs CDN  -->
 <script type="text/javascript" src="https://npmcdn.com/@reactivex/rxjs@5.0.0-beta.7/dist/global/Rx.umd.js"></script>
 
 <html lang="en">
@@ -15,12 +18,15 @@
   <body>
     <header class="header">
       <label for="colours">Please choose a colour:</label>
-      <input type="color" id="colours" name="colours" value="#FFFFFF"> 
+      <!-- takes in the color for the note -->
+      <input type="color" id="colours" name="colours" value="#FFFFFF">
+      <!-- button to add a note -->
       <button class="add" id="add">
         Add note
       </button>
     </header>
     
+    <!-- odered list will hold each of the notes -->
     <ol id="main-list" style="list-style: none">
     </ol>
 
