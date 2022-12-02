@@ -3,15 +3,15 @@
     margin: 0;
     padding: 0;
 }
-
+/* the page heading */
 h1 {
     color: rgb(202, 251, 175);
 }
-
+/* timer format text */
 h3 {
     color: white;
 }
-
+/* main div that conatins the all the timer parts */
 .timeInputDiv {
     width: 900px;
     margin: 50px auto;
@@ -21,25 +21,17 @@ h3 {
     padding-top: 20px;
     padding-bottom: 30px;
 }
-
-.top-inputDiv {
-    width: 450px;
-    height: 150px;
-    border-radius: 10px;
-    background: #82bcff;
-    margin: auto;
-}
-
+/* inpts for hours, minutes, and seconds */
 .input-time {
     border-radius: 10px;
 }
-
+/* semicolon between h:m:s */
 .semicolon {
     display: inline-block;
     font-size: 50px;
     color: white;
 }
-
+/* start timer button */
 button {
     width: 200px;
     height: 40px;
@@ -53,12 +45,12 @@ button {
     border: solid 2px black;
     cursor: pointer;
 }
-
+/* start button when mouse is hovering pver it */
 button:hover {
     background-color: #95f166;
     color: white;
 }
-
+/* inpts for hours, minutes, and seconds */
 input {
     width: 80px;
     height: 60px;
@@ -66,28 +58,18 @@ input {
     text-align: right;
     margin: 10px auto;
 }
-
-#startBtn1 {
-    background: #fff;
-    margin-top: 5%;
-    height: 25%;
-}
-
-#block {
-    display: inline-block;
-}
-
+/* div that conatins the timers output */
 .outputdiv {
     padding-bottom: 30px;
     background-color: red;
 }
-
+/* each of the output hours, minutes, and seconds */
 span.output-time {
     background-color: rgb(184, 178, 178);
     border-radius: 10px;
 
 }
-
+/* output span */
 .output-time {
     margin-top: 25px;
     font-size: 45px;

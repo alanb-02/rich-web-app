@@ -1,3 +1,4 @@
+<!-- This is for a countdown timer of similarity to a sample timer in appearance in RxJs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +9,12 @@
     <title>Countdown Timer</title>
 </head>
 <body>
-    <h3></H3>
+    <!-- div that conatins all the parts of the timer -->
     <div class="timeInputDiv">
         <h1>Counter Timer</h1>
+        <!-- dive thet contains teh timer inputs -->
         <div class="inputDiv">
+            <!-- inputting HH:MM:SS -->
             <h3>HH:MM:SS</h3>
             <input type="number" id="inputHour" class="input-time" placeholder="HH" value="00" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
             <span id="semicolon"><b>:</b></span>
@@ -20,9 +23,12 @@
             <input type="number" id="inputSecond" class="input-time" placeholder="SS" value="00" max="59" maxlength="2" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
         </div>
         <div>
+            <!-- button to start timer -->
             <button id="startBtn">Start Countdown</button>
         </div>
+        <!-- div that displays the counter countdown output -->
         <div class="outputDiv">
+            <!-- spans contains the HH, MM, and SS -->
             <span id="hour" class="output-time"></span>
             <span id="semicolon"><b>:</b></span>
             <span id="minute" class="output-time"></span>
@@ -31,7 +37,9 @@
         </div>
     </div>
 
+    <!-- RxJs CDN -->
     <script src="https://npmcdn.com/@reactivex/rxjs@5.0.0-beta.7/dist/global/Rx.umd.js"></script>
+    <!-- javascript file -->
     <script src="timer.js"></script>
 </body>
 </html>
