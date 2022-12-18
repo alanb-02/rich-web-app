@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #c4cde0;
+  background-color: #d5dae5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -67,4 +67,15 @@ select {
   border-radius: 5px;
   background-color: rgb(255, 0, 0);
   border: none;
+}
+
+#green {
+  background-color: rgb(135, 197, 144);
+}
+
+#red {
+  background-color: rgb(255, 106, 106);
+}
+#blue {
+  background-color: #3a54da;
 }
