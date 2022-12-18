@@ -3,7 +3,6 @@ import React from "react";
 import { ReactDOM } from "react";
 
 function Note() {
-    let counter = 0;
     const textnote = useRef(null);
     const colours = useRef(null);
     const[selColour, setColour] = useState('');
@@ -12,7 +11,6 @@ function Note() {
 
 
     function Submit(e) {
-        counter++;
         e.preventDefault();
         setNotes(current => [...current, textnote.current.value])
         console.log(colours.current.value)
@@ -37,7 +35,9 @@ function Note() {
     return (
         <form onSubmit={Submit}>
             <select ref={colours} id="colours" value={selColour} onChange={handleChange}>
-                <option value={'Green'}>Green</option>
+                <option value={'rgb(135, 197, 144)'}>Green</option>
+                <option value={'rgb(255, 106, 106)'}>Red</option>
+                <option value={'#3a54da'}>Blue</option>
             </select>
             <input ref={textnote} type="text" id="text-note"/>
             <button type='submit'>Create Note</button>
@@ -47,7 +47,7 @@ function Note() {
                         <div contentEditable={true} key={index}  id='note' style={{ backgroundColor: selBg}}>
                             {element}
                             <div >
-                                <button onClick={() => deleteNote(index)}>Delete</button>  
+                                <button id = "delBtn" onClick={() => deleteNote(index)}>Delete</button>  
                             </div>
                         </div> 
                     );

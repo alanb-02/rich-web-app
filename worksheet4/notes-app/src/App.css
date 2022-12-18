@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #c4cde0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+}
+
+#note {
+  border-radius: 10px;
+  margin: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: chartreuse;
+  border: none;
+}
+
+select {
+  border-radius: 5px;
+  border: none;
+}
+
+#delBtn {
+  border-radius: 5px;
+  background-color: rgb(255, 0, 0);
+  border: none;
 }
